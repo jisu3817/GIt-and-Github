@@ -4,11 +4,13 @@ git은 로컬에서 사용하는 버전 관리 시스템으로 브랜치 생성,
 
 하지만 로컬에서 사용되는 프로그램이기 때문에 다른 사람과 실시간으로 작업을 공유할 수 는 없다. 
 
+
 ## Github
 
 gihub는 git 저장소를 관리하기 위한 클라우드 기반의 호스팅 서비스이다. 그렇기 때문에 다른사람과의 소스코드를 공유할 수도 있고, 클라우드 서버에 소스를 올리기 때문에 다른 사람과의 공동 작업도 가능하다. 
 
 분산 버전 제어, 엑세스 제어, 소스코드 관리, 버그 추적, 기능 요청 및 작업 관리 등의 기능을 제공한다. 
+
 
 ## Git의 세가지 영역
 
@@ -34,13 +36,15 @@ git 디렉터리에 파일로 존재한다.
 
 워킹트리에서 작업한 내용이 git 디렉터리에 커밋되기 전에 거쳐가는 공간이다. 
 
+
 정리해보면
 
 워킹트리에서 작업을 한다. 
 
 Staging Area에 파일을 stage하여 커밋할 스냅샷을 만든다. 
 
-Staging Area에 있는 파이릉ㄹ 커밋하여 git 저장소에 영구적으로 저장하낟. 
+Staging Area에 있는 파이릉ㄹ 커밋하여 git 저장소에 영구적으로 저장한다.
+
 
 ## Git 기본 명령어
 
@@ -51,6 +55,7 @@ Staging Area에 있는 파이릉ㄹ 커밋하여 git 저장소에 영구적으�
 git init 명령어를 입력한 디렉토리 하위에 .git 디렉토리가 생성 됩니다. 
 
 (.git에는 git과 관련된 정보가 저장되어 있음.)
+
 
 ### git status
 
@@ -63,6 +68,7 @@ git status 명령어를 입력하면 Untracked와 Tracked라는 키워드를 볼
 - **Tracked**: git이 해당 파일을 추적 및 관리하는 상태로 git add 명령어를 통해 Staging Area에 
 포함되었거나 Commit을 통해 git 디렉터리에 저장된 파일을 의미한다.
 
+
 ### git add
 
 변경 사항을 저장하여 Tracked 상태로 변경시킨다. 
@@ -74,6 +80,7 @@ git add [-A] [file name]
 git add -A 또는 git add . 명령어를 통해 변경된 모든 사항을 add할 수 있고, 
 
 원하는 파일만 add도 가능하다. 
+
 
 ### git commit
 
@@ -90,6 +97,7 @@ add된 변경 사항을 이력에 추가하는 명령어로 -m 옵션으로 이�
 ```bash
 git commit --amend -m "내용 입력"
 ```
+
 
 ### git rebase
 
@@ -114,6 +122,7 @@ git rebase main
 
 커밋이 공개 리포지토리롤 푸시된 후에는 절대 rebase를 수행해서는 안된다. 
 rebase는 이전 커밋을 새 커밋으로 대체하고 프로젝트 기록의 일부가 사라진 것처럼 보이게 하기 때문이다. 
+
 
 ### git log
 
@@ -168,6 +177,7 @@ git reset [<commit>] [--soft | --mixed [-N] | --hard | --merge | --keep]
 - **git reset —hard HEAD^:** commit을 취소하고, 해당 파일을 unstaged로 워킹 디렉터리에서 삭제
 - **git reset {commit id} —hard:** 해당 commit까지 이력을 초기화
 
+
 ### git revert
 
 이전 상태의 이력을 유지하는 명령어
@@ -181,6 +191,7 @@ git revert <commit>...
 ex) 삭제한 커밋을 되돌리려면 git revert {삭제한 commit id} 로 커밋을 취소할 수 있다. 
 
 이전에 삭제되었던 커밋은 다시 생성되고, 새로 생성된 커밋은 삭제되며 revert에 대한 새로운 커밋이 생성된다는 점에 유의해야 한다. 
+
 
 ## Git Branch
 
