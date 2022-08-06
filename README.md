@@ -4,6 +4,7 @@ git은 로컬에서 사용하는 버전 관리 시스템으로 브랜치 생성,
 
 하지만 로컬에서 사용되는 프로그램이기 때문에 다른 사람과 실시간으로 작업을 공유할 수 는 없다. 
 
+<br>
 
 ## Github
 
@@ -11,12 +12,13 @@ gihub는 git 저장소를 관리하기 위한 클라우드 기반의 호스팅 �
 
 분산 버전 제어, 엑세스 제어, 소스코드 관리, 버그 추적, 기능 요청 및 작업 관리 등의 기능을 제공한다. 
 
+<br>
 
 ## Git의 세가지 영역
 
 Git 프로젝트는 깃 디렉터리, 워킹 트리, Staging Area라는 세 가지 영역이 있다. 
 
-**git 디렉터리**
+- **git 디렉터리**
 
 최초 git init 명령어로 깃 저장소가 생성될 때 .git이라는 이름으로 생성되는데 git 프로젝트의 모든 메타데이터와 객체 데이터베이스가 저장된다.
 
@@ -24,18 +26,19 @@ Clone으로 원격 저장소를 복사해서 가져올 때 이 .git 디렉터리
 
 ---
 
-**워킹트리 (워킹 디렉터리)**
+- **워킹트리 (워킹 디렉터리)**
 
 git 디렉터리에서 특정 버전을 Checkout 해온 것으로 프로젝트 작업이 진행되는 곳이다. 
 
 ---
 
-**Staging Area**
+- **Staging Area**
 
 git 디렉터리에 파일로 존재한다. 
 
 워킹트리에서 작업한 내용이 git 디렉터리에 커밋되기 전에 거쳐가는 공간이다. 
 
+<br>
 
 정리해보면
 
@@ -45,6 +48,7 @@ Staging Area에 파일을 stage하여 커밋할 스냅샷을 만든다.
 
 Staging Area에 있는 파이릉ㄹ 커밋하여 git 저장소에 영구적으로 저장한다.
 
+<br>
 
 ## Git 기본 명령어
 
@@ -56,6 +60,7 @@ git init 명령어를 입력한 디렉토리 하위에 .git 디렉토리가 생�
 
 (.git에는 git과 관련된 정보가 저장되어 있음.)
 
+<br>
 
 ### git status
 
@@ -68,6 +73,7 @@ git status 명령어를 입력하면 Untracked와 Tracked라는 키워드를 볼
 - **Tracked**: git이 해당 파일을 추적 및 관리하는 상태로 git add 명령어를 통해 Staging Area에 
 포함되었거나 Commit을 통해 git 디렉터리에 저장된 파일을 의미한다.
 
+<br>
 
 ### git add
 
@@ -81,6 +87,7 @@ git add -A 또는 git add . 명령어를 통해 변경된 모든 사항을 add�
 
 원하는 파일만 add도 가능하다. 
 
+<br>
 
 ### git commit
 
@@ -98,6 +105,7 @@ add된 변경 사항을 이력에 추가하는 명령어로 -m 옵션으로 이�
 git commit --amend -m "내용 입력"
 ```
 
+<br>
 
 ### git rebase
 
@@ -123,6 +131,7 @@ git rebase main
 커밋이 공개 리포지토리롤 푸시된 후에는 절대 rebase를 수행해서는 안된다. 
 rebase는 이전 커밋을 새 커밋으로 대체하고 프로젝트 기록의 일부가 사라진 것처럼 보이게 하기 때문이다. 
 
+<br>
 
 ### git log
 
@@ -160,6 +169,7 @@ git log [<options>] [<revision range>] [[--] <path>...]
     
     ![스크린샷 2022-08-07 오전 12.25.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/00753106-17d5-4523-adee-102b1f8aec43/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.25.42.png)
     
+<br>
 
 ### git reset
 
@@ -177,6 +187,7 @@ git reset [<commit>] [--soft | --mixed [-N] | --hard | --merge | --keep]
 - **git reset —hard HEAD^:** commit을 취소하고, 해당 파일을 unstaged로 워킹 디렉터리에서 삭제
 - **git reset {commit id} —hard:** 해당 commit까지 이력을 초기화
 
+<br>
 
 ### git revert
 
@@ -192,6 +203,7 @@ ex) 삭제한 커밋을 되돌리려면 git revert {삭제한 commit id} 로 커
 
 이전에 삭제되었던 커밋은 다시 생성되고, 새로 생성된 커밋은 삭제되며 revert에 대한 새로운 커밋이 생성된다는 점에 유의해야 한다. 
 
+<br>
 
 ## Git Branch
 
@@ -213,6 +225,8 @@ checkout 하나의 키워드에 많은 기능이 들어있어 버전이 업그�
 - **switch**: switch branch
 - **restore**: restore working tree files
 
+<br>
+
 ### git restore
 
 git의 파일 조작을 위한 기능을 지원하는 명령어 
@@ -224,6 +238,8 @@ git restore [file]
 - **git restore [file]** : 특정 파일 HEAD commit으로 복구
 - **git restore —source [commit id] [file]**: 특정 파일을 특정 commit으로 복구
 - **git restore —staged [file]** : Staging Area에 올라간 파일을 다시 Unstaging
+
+<br>
 
 ### git merge
 
