@@ -149,6 +149,7 @@ git log [<options>] [<revision range>] [[--] <path>...]
 - **—branches**: 현재 존재하는 각 브랜치별 최신 커밋 확인 옵션
 - **—graph**: 현재 브랜치들의 상태를 막대로 나타내는 옵션으로 —branches와 함께 사용해야 작동이 된다. 
                 직관적으로 브랜치가 나뉘고 병합된 시점을 명확히 확인할 수 있다.
+
     <img width="286" alt="스크린샷 2022-08-07 오전 1 30 07" src="https://user-images.githubusercontent.com/79014269/183257681-6d159471-27e4-43d1-9a84-ec740233828a.png">
 
 - **-p 또는 —patch:** 커밋의 diff 결과를 보여주는 옵션으로 무엇을 커밋했는지 빠르게 조회가 가능하다.
