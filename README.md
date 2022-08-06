@@ -110,14 +110,7 @@ git commit --amend -m "내용 입력"
 ### git rebase
 
 이전 또는 여러 개의 커밋을 수정하고 싶을 때 사용하는 명령어
-
-![rebase 통합](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f00efd17-24d3-4788-b415-53a91afe02d0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.13.54.png)
-
-rebase 통합
-
-![merge 통합](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cd62fb31-1477-4c89-9e57-25562c134f6d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.20.12.png)
-
-merge 통합
+<img width="641" alt="스크린샷 2022-08-07 오전 1 28 42" src="https://user-images.githubusercontent.com/79014269/183257640-e5e6e28e-2574-4e93-af4d-e42ae935dfbc.png">
 
 rebase는 브랜치의 기준을 한 커밋에서 다른 커밋으로 변경하여 마치 다른 커밋에서 브랜치를 만든 것처럼 보이게 한다. 
 
@@ -142,8 +135,7 @@ git log [<options>] [<revision range>] [[--] <path>...]
 ```
 
 그동안의 로그를 확인할 수 있는 명령어로 다양한 옵션을 조합하여 원하는 형태의 로그를 출력할 수 있다. 
-
-![스크린샷 2022-08-07 오전 12.13.12.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/76178cde-32ab-4ff0-964a-e7037f66ca85/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.13.12.png)
+<img width="700" alt="스크린샷 2022-08-07 오전 1 29 13" src="https://user-images.githubusercontent.com/79014269/183257654-4cffacfd-536a-49b0-9ab2-2a90b805d38b.png">
 
 깃 저장소를 클론하여 git log를 확인해보면 다른 사람이 작업한 이력까지 모두 확인할 수 있다. 
 
@@ -152,23 +144,19 @@ git log [<options>] [<revision range>] [[--] <path>...]
 몇 가지 옵션을 알아보면
 
 - **—oneline**: 커밋 정보를 한 줄로 표시하여 히스토리를 간결하게 확인 가능
-    
-    ![스크린샷 2022-08-07 오전 12.20.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e87f4dc9-863c-4e5a-b086-b7be8e16f40c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.20.42.png)
-    
+    <img width="676" alt="스크린샷 2022-08-07 오전 1 29 41" src="https://user-images.githubusercontent.com/79014269/183257671-c9369e72-65b2-4a2b-8d1f-252b61c43de2.png">
+ 
 - **—branches**: 현재 존재하는 각 브랜치별 최신 커밋 확인 옵션
 - **—graph**: 현재 브랜치들의 상태를 막대로 나타내는 옵션으로 —branches와 함께 사용해야 작동이 된다. 
                 직관적으로 브랜치가 나뉘고 병합된 시점을 명확히 확인할 수 있다.
-    
-    ![스크린샷 2022-08-07 오전 12.22.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/edd91515-62bc-42c1-8a5b-6aa7d7ef312e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.22.21.png)
-    
+    <img width="286" alt="스크린샷 2022-08-07 오전 1 30 07" src="https://user-images.githubusercontent.com/79014269/183257681-6d159471-27e4-43d1-9a84-ec740233828a.png">
+
 - **-p 또는 —patch:** 커밋의 diff 결과를 보여주는 옵션으로 무엇을 커밋했는지 빠르게 조회가 가능하다.
-    
-    ![스크린샷 2022-08-07 오전 12.24.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a2a57da-dd76-4f83-a474-8df6dad08486/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.24.38.png)
-    
+    <img width="676" alt="스크린샷 2022-08-07 오전 1 30 41" src="https://user-images.githubusercontent.com/79014269/183257694-b88c7fcf-2967-421c-9f77-c34625a39cd9.png">
+
 - **—stat:** 히스토리의 통계를 보여주는 옵션으로 각 커밋의 통계 정보를 조회할 수 있다.
-    
-    ![스크린샷 2022-08-07 오전 12.25.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/00753106-17d5-4523-adee-102b1f8aec43/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.25.42.png)
-    
+    <img width="667" alt="스크린샷 2022-08-07 오전 1 31 00" src="https://user-images.githubusercontent.com/79014269/183257706-b98313b3-cfa8-4dc2-acff-33ed75559e71.png">
+
 <br>
 
 ### git reset
